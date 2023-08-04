@@ -24,12 +24,12 @@ const connection = mysql.createConnection({
   user     : 'root', // 그럼에도 불구하고 다른 USER로 하시고 싶은 경우 .env파일 변경 후 추가해주시면 됩니다.
   password : process.env.MYSQL_ROOT_PASSWORD, // 다른 USER로 하시고 싶은 경우 .env파일 변경 후 추가해주시면 됩니다.
   database : process.env.MYSQL_DATABASE,
-  port     : '3306'
+  port     : 3306
 });
 
 connection.connect();
 
-connection.query('SELECT * from employees', (error: any, rows: any) => {
+connection.query('SELECT * from employees', (error, rows) => {
   if (error) throw error;
   console.log('User info is: ', rows);
 });
