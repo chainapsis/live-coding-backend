@@ -21,8 +21,8 @@ app.listen(port, () => {
 // 최대한 이 부분은 수정하지 마시고 root로 접속해서 사용해주세요.
 const connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'root', // 그럼에도 불구하고 다른 USER로 하시고 싶은 경우 .env파일 변경 후 추가해주시면 됩니다.
-  password : process.env.MYSQL_ROOT_PASSWORD, // 다른 USER로 하시고 싶은 경우 .env파일 변경 후 추가해주시면 됩니다.
+  user     : process.env.MYSQL_ROOT_USER, // 그럼에도 불구하고 다른 USER로 하시고 싶은 경우 .env파일 변경 후 수정해주시면 됩니다.
+  password : process.env.MYSQL_ROOT_PASSWORD, // 다른 USER로 하시고 싶은 경우 .env파일 변경 후 수정해주시면 됩니다.
   database : process.env.MYSQL_DATABASE,
   port     : 3306
 });
