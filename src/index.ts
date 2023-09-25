@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { Solution } from "./solution";
 import mysql from "mysql";
+import mysql2 from "mysql2";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -19,7 +20,7 @@ app.listen(port, () => {
  * DB 연결하는 테스트 부분입니다.
  */
 // 최대한 이 부분은 수정하지 마시고 root로 접속해서 사용해주세요.
-const connection = mysql.createConnection({
+const connection = mysql2.createConnection({
   host: "localhost",
   user: process.env.MYSQL_ROOT_USER, // 그럼에도 불구하고 다른 USER로 하시고 싶은 경우 .env파일 변경 후 process.env.MYSQL_USER로 수정해주시면 됩니다.
   password: process.env.MYSQL_ROOT_PASSWORD, // 다른 USER로 하시고 싶은 경우 .env파일 변경 후 process.env.MYSQL_PASSWORD로 수정해주시면 됩니다.
