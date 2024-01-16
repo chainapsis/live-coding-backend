@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import { Solution } from "./solution";
-import mysql from "mysql";
 import mysql2 from "mysql2";
 import dotenv from "dotenv";
 dotenv.config();
@@ -50,33 +49,17 @@ app.get("/", (req: express.Request, res: express.Response) => {
  * Notion에 있는 문제 설명을 참고해주세요.
  */
 app.get(
-  "/solution/1-a",
+  "/solution/1-1",
   async (req: express.Request, res: express.Response) => {
-    const solution = await Solution.solution_1_a();
+    const solution = await Solution.solution_1_1();
     res.send(solution);
   },
 );
 
 app.post(
-  "/solution/1-b",
+  "/solution/1-2",
   async (req: express.Request, res: express.Response) => {
-    const solution = await Solution.solution_1_b();
-    res.send(solution);
-  },
-);
-
-app.post(
-  "/solution/1-c",
-  async (req: express.Request, res: express.Response) => {
-    const solution = await Solution.solution_1_c();
-    res.send(solution);
-  },
-);
-
-app.get(
-  "/solution/1-check",
-  async (req: express.Request, res: express.Response) => {
-    const solution = await Solution.solution_1_check();
+    const solution = await Solution.solution_1_2();
     res.send(solution);
   },
 );
@@ -107,9 +90,3 @@ app.get("/solution/3", async (req: express.Request, res: express.Response) => {
 });
 
 //------------------------------------------------------
-
-/**
- * 4번 문제입니다.
- * Notion에 있는 문제 설명을 참고해주세요.
- * 새로운 파일이 추가될 예정이고 해당 파일의 클래스를 구현해주시면 됩니다.
- */
