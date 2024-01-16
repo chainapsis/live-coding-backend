@@ -17,8 +17,7 @@ export const solution_1_2 = async () => {
  * [2번 문제]
  */
 export const solution_2 = async () => {
-  const SQL_CLI = ``;
-  return SQL_CLI;
+  return "";
 };
 
 //---------------------------------------------------------------------------------------------
