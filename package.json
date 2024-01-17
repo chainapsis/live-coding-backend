@@ -2,28 +2,36 @@
   "scripts": {
     "format": "prettier --write .",
     "build": "tsc",
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start": "tsc && node ./build/index.js",
+    "dev": "tsx watch src/index.ts",
     "test": "jest",
+    "test1": "tsc && jest -t 'Solution 1'",
+    "test2": "tsc && jest -t 'Solution 2'",
+    "test3": "tsc && jest -t 'Solution 3'",
     "docker-up": "docker-compose --env-file=.env up -d"
   },
   "dependencies": {
-    "@keplr-wallet/crypto": "^0.12.61",
-    "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mysql": "^2.18.1",
-    "mysql2": "^3.6.1",
-    "nodemon": "^3.0.1"
+    "mysql2": "^3.6.1"
   },
   "devDependencies": {
+    "tsx": "^4.7.0",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-typescript": "^7.23.3",
+    "@jest/globals": "^29.7.0",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.11",
     "@types/mysql": "^2.15.21",
     "@types/node": "^20.4.5",
-    "jest": "^29.6.2",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
     "prettier": "^3.0.1",
-    "ts-node": "^10.9.1",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
   }
 }

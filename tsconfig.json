@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES6" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */,
+    "preserveValueImports": false,
     "module": "CommonJS" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
     "moduleResolution": "node",
     "sourceMap": true /* Generates corresponding '.map' file. */,
@@ -10,7 +11,12 @@
     "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
     "resolveJsonModule": true,
-    "outDir": "./dist" /* Redirect output structure to the directory. */
+    "outDir": "./build", /* Redirect output structure to the directory. */
+    "noImplicitAny": true
   },
-  "include": ["src/**/*", "temp-chainInfo.ts"]
+  "ts-node": {
+    "esm": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
